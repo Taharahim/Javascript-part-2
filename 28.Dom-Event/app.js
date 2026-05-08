@@ -1,3 +1,4 @@
+
 // 1. Counter App
 
 // What it wants:
@@ -21,40 +22,42 @@
 let addBtn = document.querySelector('.add-btn');
 let subBtn = document.querySelector('.sub-btn');
 let count = 0
-addBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+addBtn.addEventListener('click' , (e) =>{
+e.preventDefault();
     count++;
     document.querySelector('.count').textContent = count;
 }
-)
-subBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    count--;
+);
+subBtn.addEventListener('click' , (e) =>{
+    e.preventDefault();     
+     count--;
     document.querySelector('.count').textContent = count;
-})
+});
 
-    // 2. Live Character Counter
+// 2. Live Character Counter
 
-    // What it wants:
-    // As user types in an input or textarea, show how many characters they typed.
+// What it wants:
+// As user types in an input or textarea, show how many characters they typed.
 
-    // Requirements:
+// Requirements:
 
-    // One textarea/input
-    // A text below like: Characters: 0
-    // Count updates in real time while typing
+// One textarea/input
+// A text below like: Characters: 0
+// Count updates in real time while typing
 
-    // What you’ll practice:
+// What you’ll practice:
 
-    // input event
-    // Reading value
-    // Dynamic DOM updates
-    = document.getElementById('text').addEventListener('input', (e) => {
-        let text = e.target.value;
-        let counting = text.length;
-        let letters = `The total character you type without whitespace is ${counting}`;
-        let answer = document.querySelector('.text-count').textContent = letters;
-    });
+// input event
+// Reading value
+// Dynamic DOM updates
+
+
+document.getElementById('text').addEventListener('input' , (e)=>{
+let text = e.target.value;
+let counting =  text.length;
+let letters = `The total character you type without whitespace is ${counting}`;
+let answer = document.querySelector('.text-count').textContent = letters;
+});
 
 
 
@@ -80,14 +83,14 @@ function ADDTASK(text) {
     let Lists = document.createElement('li');
     Lists.className = 'Text'
     Lists.innerHTML = `${text}`;
-    let note = document.querySelector('.Tasks');
-    note.appendChild(Lists);
+let note = document.querySelector('.Tasks');
+note.appendChild(Lists);
 }
-todoBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+todoBtn.addEventListener('click' , (e)=>{
+    e.preventDefault();   
     let sentence = document.getElementById('sentence').value;
     ADDTASK(sentence);
-    document.getElementById('sentence').value = '';
+     document.getElementById('sentence').value = '';
 });
 
 
@@ -105,18 +108,18 @@ todoBtn.addEventListener('click', (e) => {
 
 let themeBtn = document.querySelector('.theme-btn');
 
-themeBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+themeBtn.addEventListener('click' , (e)=>{
     let body = document.getElementById('body');
+    e.preventDefault();
     if (themeBtn.innerText === 'Turn Dark') {
-        body.style.backgroundColor = '#000';
-        body.style.color = 'antiquewhite';
-        themeBtn.innerText = 'Turn Light';
-    } else {
-        body.style.backgroundColor = 'antiquewhite';
-        body.style.color = '#000';
-        themeBtn.innerText = 'Turn Dark';
-    }
+    body.style.backgroundColor = '#000';
+    body.style.color = 'antiquewhite';
+    themeBtn.innerText = 'Turn Light';
+} else {
+    body.style.backgroundColor = 'antiquewhite';
+    body.style.color = '#000';
+    themeBtn.innerText = 'Turn Dark';
+  }
 })
 
 // 5. Image Switcher
@@ -132,22 +135,23 @@ themeBtn.addEventListener('click', (e) => {
 
 let images = [
     'https://m.media-amazon.com/images/I/51sG+agaZbS._AC_UF894,1000_QL80_.jpg',
-    'https://media.istockphoto.com/id/2166773378/photo/autumn-on-lake-gosau-in-salzkammergut-austria.jpg?s=612x612&w=0&k=20&c=MLZqujxxqGP2wjQaT6zVHhnEgiHQefzLiee5Hudaqx0=',
-    'https://static.vecteezy.com/system/resources/thumbnails/016/940/106/small/beautiful-moonlight-scenery-background-free-scenery-illustration-moonlight-scenery-with-stars-on-the-night-sky-beautiful-midnight-background-free-vector.jpg',
+'https://media.istockphoto.com/id/2166773378/photo/autumn-on-lake-gosau-in-salzkammergut-austria.jpg?s=612x612&w=0&k=20&c=MLZqujxxqGP2wjQaT6zVHhnEgiHQefzLiee5Hudaqx0=',
+'https://static.vecteezy.com/system/resources/thumbnails/016/940/106/small/beautiful-moonlight-scenery-background-free-scenery-illustration-moonlight-scenery-with-stars-on-the-night-sky-beautiful-midnight-background-free-vector.jpg',
 ];
-let counter = 0;
+let counter = 0 ;
 let imageBtn = document.getElementById('image-btn');
 let img = document.createElement('img')
 let imagesChannel = document.querySelector('.images');
 imagesChannel.appendChild(img);
-img.style.width = '350px';
-img.style.height = '350px';
+img.style.width ='350px'; 
+img.style.height ='350px'; 
 
-imageBtn.addEventListener('click', (e) => {
+imageBtn.addEventListener('click' , (e)=>{
     e.preventDefault();
-    img.setAttribute('src', images[counter]);
-    counter++;
-    if (counter >= images.length) {
-        counter = 0;
-    }
+        img.setAttribute('src' , images[counter]);
+        counter++;
+        if (counter >= images.length) {
+    counter = 0;
+}
 })
+ 
